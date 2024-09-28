@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
 import { Inter } from 'next/font/google';
-import { Suspense, type ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import { Suspense } from 'react';
 
 import Header from '@/components/header/Header';
 import { ThemeProvider } from '@/context';
@@ -20,9 +21,9 @@ const RootLayout = ({
   children,
   withoutHtmlBody = false,
 }: Readonly<{
-  children: ReactElement;
+  children: ReactNode;
   withoutHtmlBody?: boolean;
-}>): JSX.Element => {
+}>): ReactElement => {
   const layoutContent = (
     <ClientProvider>
       <ThemeProvider>
